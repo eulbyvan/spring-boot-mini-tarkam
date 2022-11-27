@@ -1,31 +1,32 @@
 package com.enigmacamp.skuymaen.minitarkam.entity;
 
 import javax.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
-@NamedQuery(name = "getMatches", query = "SELECT m FROM Match m ORDER BY m.id")
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "t_match")
-@ToString
 public class Match {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "home_score")
-    private @Getter @Setter Integer homeScore;
+    private Integer homeScore;
     @Column(name = "away_score")
-    private @Getter @Setter Integer awayScore;
+    private Integer awayScore;
     @Column(name = "is_finished")
-    private @Getter @Setter Boolean isFinished = false;
+    private Boolean isFinished = false;
 
     @ManyToOne
     @JoinColumn(name = "home_id")
-    private @Getter @Setter Club homeClub;
+    private Club homeClub;
 
     @ManyToOne
     @JoinColumn(name = "away_id")
-    private @Getter @Setter Club awayClub;
+    private Club awayClub;
 }

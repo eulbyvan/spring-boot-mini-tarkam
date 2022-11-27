@@ -1,27 +1,29 @@
 package com.enigmacamp.skuymaen.minitarkam.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "t_goal")
-@ToString
 public class Goal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private @Getter @Setter Integer id;
+    private Integer id;
 
     @Column(name = "total_goal_scored")
-    private @Getter @Setter Integer totalGoalScored;
+    private Integer totalGoalScored;
 
     @OneToOne
     @JoinColumn(name = "player_id")
-    private @Getter @Setter @ToString.Exclude Player player;
+    private Player player;
 
     @OneToOne
     @JoinColumn(name = "match_id")
-    private @Getter @Setter @ToString.Exclude Match match;
+    private Match match;
 }
