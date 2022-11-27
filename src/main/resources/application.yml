@@ -1,4 +1,4 @@
-spring:
+app:
   datasource:
     jdbc-url: ${DB_URL}
     username: ${DB_USERNAME}
