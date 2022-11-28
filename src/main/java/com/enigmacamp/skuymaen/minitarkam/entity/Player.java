@@ -36,7 +36,7 @@ public class Player {
     private Skill skill;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "team_id")
+    @JoinColumn(name = "club_id")
     private Club club;
 
     @Column(name = "is_active", nullable = false)

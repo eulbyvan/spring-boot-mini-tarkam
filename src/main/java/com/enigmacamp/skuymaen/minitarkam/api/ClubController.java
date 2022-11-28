@@ -1,9 +1,8 @@
 package com.enigmacamp.skuymaen.minitarkam.api;
 
 import com.enigmacamp.skuymaen.minitarkam.entity.Club;
-import com.enigmacamp.skuymaen.minitarkam.service.ClubService;
+import com.enigmacamp.skuymaen.minitarkam.service.implementation.ClubService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
