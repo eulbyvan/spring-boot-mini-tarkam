@@ -33,31 +33,31 @@ public class ClubService {
     }
 
     public String deleteClub(int id) {
-//        Club existingClub = clubRepo.findById(id).orElse(null);
-//
-//        if (existingClub == null) return "club not found";
-//
-//        existingClub.setIsActive(false);
-//        existingClub.setIsDeleted(true);
-//
-//        Club deletedClub = clubRepo.save(existingClub);
-//
-//        return "club deleted: " + deletedClub.getId();
-        return null;
+        Club existingClub = clubRepo.findById(id).orElse(null);
+
+        if (existingClub == null) return "club not found";
+
+        existingClub.setIsActive(false);
+        existingClub.setIsDeleted(true);
+
+        Club deletedClub = clubRepo.save(existingClub);
+
+        return "club deleted: " + deletedClub.getId();
+//        return null;
     }
 
     public Club updateClub(Club club) {
-//        Club existingClub = clubRepo.findById(club.getId()).orElse(null);
-//
-//        if (existingClub == null) return null;
-//
-//        existingClub.setCity(club.getCity());
-//        existingClub.setName(club.getName());
-//        existingClub.setPlayers(club.getPlayers());
-//        existingClub.setHomeMatches(club.getHomeMatches());
-//        existingClub.setAwayMatches(club.getAwayMatches());
-//
-//        return clubRepo.save(existingClub);
-        return null;
+        Club existingClub = clubRepo.findById(club.getId()).orElse(null);
+
+        if (existingClub == null) return null;
+
+        existingClub.setCity(club.getCity());
+        existingClub.setName(club.getName());
+        existingClub.setPlayers(club.getPlayers());
+        existingClub.setHomeMatches(club.getHomeMatches());
+        existingClub.setAwayMatches(club.getAwayMatches());
+
+        return clubRepo.save(existingClub);
+//        return null;
     }
 }

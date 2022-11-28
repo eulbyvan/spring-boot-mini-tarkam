@@ -3,11 +3,12 @@ package com.enigmacamp.skuymaen.minitarkam.api;
 import com.enigmacamp.skuymaen.minitarkam.entity.Club;
 import com.enigmacamp.skuymaen.minitarkam.service.ClubService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("api/v1/")
+@RequestMapping("api/v1/club")
 @RestController
 public class ClubController {
     @Autowired
@@ -28,13 +29,13 @@ public class ClubController {
         return clubService.getClubs();
     }
 
-    @GetMapping("/club/{id}")
-    public Club findClubById(@PathVariable int id) {
+    @GetMapping(path = "{id}")
+    public Club findClubById(@PathVariable("id") int id) {
         return clubService.getClubById(id);
     }
 
-    @GetMapping("/club/{name}")
-    public List<Club> findClubByName(@PathVariable String name) {
+    @GetMapping(path = "/findByName")
+    public List<Club> findClubByName(@RequestParam(value = "name") String name) {
         return clubService.getClubsByName(name);
     }
 
